@@ -1,0 +1,22 @@
+{
+  "name": "angular-phonegap-storage",
+  "version": "0.0.1",
+  "authors": [
+    "fumitoito <weathercook+service@gmail.com>"
+  ],
+  "description": "An angularJS wrapper around window.openDatabase for Phonegap/Cordova plugin",
+  "main": "dist/phonegapStorage.min.js",
+  "keywords": [
+    "angular.js",
+    "WebSQL",
+    "phonegap"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
