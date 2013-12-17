@@ -1,0 +1,21 @@
+{
+  "name": "angular-phonegap-storage",
+  "version": "0.0.1",
+  "description": "An angularJS wrapper around window.openDatabase for Phonegap/Cordova plugin",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": "",
+  "keywords": [
+    "angularjs",
+    "phonegap"
+  ],
+  "author": "fumitoito",
+  "license": "MIT",
+  "gitHead": "c156eee04b8f714cb30bb993b334c1e4fcc58a9d",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-uglify": "~0.2.7"
+  }
+}
