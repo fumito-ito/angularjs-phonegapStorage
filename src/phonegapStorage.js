@@ -21,14 +21,15 @@ angular.module('phonegapStorage').factory('phonegapStorage', [
 
         var extendSQLTransaction = function (tx, queryFn) {
             var exTx = {};
+            angular.extend(exTx, tx);
 
             exTx.executeSql = function (queryString) {
                 var deferred = $q.defer();
                 //
                 tx.executeSql(queryString, [], function (tx, results) {
-                    $rootScope.$apply( deferred.resolve({tx: tx, results: results}) );
+                    $rootScope.$apply( deferred.resolve({tx: tx, resultSet: results}) );
                 }, function (err) {
-                    $rootScope.$apply( deferred.reject );
+                    $rootScope.$apply( deferred.reject(err) );
                 });
 
                 return deferred.promise;
@@ -39,6 +40,7 @@ angular.module('phonegapStorage').factory('phonegapStorage', [
 
         var extendDatabase = function (db) {
             var exDb = {};
+            angular.extend(exDb, db);
 
             exDb.transaction = function (query) {
                 var deferred = $q.defer();
