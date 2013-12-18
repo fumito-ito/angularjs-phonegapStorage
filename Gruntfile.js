@@ -34,10 +34,20 @@ module.exports = function (grunt) {
                     'dist/<%= pkg.name%>.min.js': 'src/phonegapStorage.js'
                     }
                 }
+            },
+        watch: {
+            build: {
+                files: ['src/**/*.js', 'Gruntfile.js'],
+                tasks: ['jshint', 'uglify'],
+                options: {
+                    spawn: false
+                }
             }
+        }
         });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.registerTask('default', ['jshint', 'uglify']);
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.registerTask('default', 'watch:build');
 };
