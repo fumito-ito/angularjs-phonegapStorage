@@ -18,7 +18,10 @@ module.exports = function (grunt) {
                     beforeEach: true,
                     angular: true,
                     inject: true,
-                    descript: true
+                    descript: true,
+                    $window: true,
+                    $rootScope: true,
+                    $q: true
                     }
                 }
             },

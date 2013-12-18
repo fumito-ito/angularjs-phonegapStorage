@@ -1,3 +1,4 @@
+/*global phonegapStorage_msgs: false */
 'use strict';
 
 /**
@@ -14,7 +15,7 @@ angular.module('phonegapStorage').factory('phonegapStorage', [
     '$q',
     '$rootScope',
     '$window',
-    'phonegapStorage_msgs'
+    'phonegapStorage_msgs',
     function ($q, $rootScope, $window, phonegapStorage_msgs) {
         var storage = {};
 
@@ -31,7 +32,7 @@ angular.module('phonegapStorage').factory('phonegapStorage', [
                 });
 
                 return deferred.promise;
-            }
+            };
 
             return queryFn(exTx);
         };
@@ -43,7 +44,7 @@ angular.module('phonegapStorage').factory('phonegapStorage', [
                 var deferred = $q.defer();
                 //
                 db.transaction(function (tx) {
-                    return extendSQLTransaction(tx, queryFn);
+                    return extendSQLTransaction(tx, query);
                 }, function (err) {
                     $rootScope.$apply( deferred.reject(err) );
                 }, function () {
