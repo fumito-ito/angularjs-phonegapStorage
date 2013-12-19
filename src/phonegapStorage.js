@@ -42,14 +42,16 @@ angular.module('phonegapStorage').factory('phonegapStorage', [
             var exDb = {};
             angular.extend(exDb, db);
 
-            exDb.transaction = function (query) {
+            exDb.transaction = function (fn) {
                 var deferred = $q.defer();
                 //
                 db.transaction(function (tx) {
-                    return extendSQLTransaction(tx, query);
+                    extendSQLTransaction(tx, fn);
                 }, function (err) {
+                    // error callback
                     $rootScope.$apply( deferred.reject(err) );
                 }, function () {
+                    // success callback
                     $rootScope.$apply( deferred.resolve() );
                 });
 
