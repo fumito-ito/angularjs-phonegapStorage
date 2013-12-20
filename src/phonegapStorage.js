@@ -69,7 +69,7 @@ angular.module('phonegapStorage').factory('phonegapStorage', [
             if ($window && $window.openDatabase) {
                 //
                 var db = $window.openDatabase(database_name, database_version, database_displayname, database_size);
-                return extendDatabase(db);
+                deferred.resolve(extendDatabase(db));
             } else {
                 // storage api is not defined or permitted.
                 $rootScope.$broadcast('error', phonegapStorage_msgs['errors.phonegapStorage.notSupported']);
