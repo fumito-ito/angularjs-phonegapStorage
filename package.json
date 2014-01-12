@@ -1,6 +1,6 @@
 {
-  "name": "angular-phonegapStorage",
-  "version": "0.0.1",
+  "name": "angular-phonegap-storage",
+  "version": "0.1.0",
   "description": "An angularJS wrapper around window.openDatabase for Phonegap/Cordova plugin",
   "scripts": {
     "test": "npm test"
